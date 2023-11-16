@@ -2,6 +2,12 @@ import Title from "../Share/Title/Title";
 import TeamCard from "./TeamCard";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
+import './Team.css'
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
 
 const Team = () => {
@@ -28,28 +34,48 @@ const Team = () => {
             icon2: <FaFacebookF size={30} />
         },
         {
-            images: 'https://images.unsplash.com/photo-1584940121396-17ed95a72c29?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBlcnNvbiUyMGltYWdlcyUyMHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D',
+            images: 'https://images.unsplash.com/photo-1587837073080-448bc6a2329b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBlcnNvbiUyMGltYWdlcyUyMHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D',
             icon1: <FaLinkedin size={30} />,
             icon2: <FaFacebookF size={30} />
         },
         {
-            images: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHBlcnNvbiUyMGltYWdlcyUyMHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D',
+            images: 'https://images.unsplash.com/photo-1587837073080-448bc6a2329b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBlcnNvbiUyMGltYWdlcyUyMHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D',
+            icon1: <FaLinkedin size={30} />,
+            icon2: <FaFacebookF size={30} />
+        },
+        {
+            images: 'https://images.unsplash.com/photo-1587837073080-448bc6a2329b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBlcnNvbiUyMGltYWdlcyUyMHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D',
+            icon1: <FaLinkedin size={30} />,
+            icon2: <FaFacebookF size={30} />
+        },
+        {
+            images: 'https://images.unsplash.com/photo-1587837073080-448bc6a2329b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBlcnNvbiUyMGltYWdlcyUyMHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D',
             icon1: <FaLinkedin size={30} />,
             icon2: <FaFacebookF size={30} />
         },
     ]
 
     return (
-        <div className="container mx-auto md:px:0 px-5">
-            {/* title */}
+        <div className="container mx-auto md:px-0 px-5">
+            {/* Title */}
             <Title sectionName="Team" sectionTitle="Our Amazing Team" />
 
-            {/* single cards */}
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 mt-11 py-5">
-                {
-                    teamInfo.map(team => <TeamCard key={team.icon1} team={team} />)
-                }
-            </div>
+            {/* Swiper */}
+                <Swiper
+                    slidesPerView={3}
+                    spaceBetween={30}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Pagination]}
+                    className="mySwiper mt-11"
+                >
+                    {teamInfo.map((team, index) => (
+                        <SwiperSlide key={index}>
+                            <TeamCard team={team} />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
         </div>
     );
 };

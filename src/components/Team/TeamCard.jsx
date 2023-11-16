@@ -1,5 +1,6 @@
 
 const TeamCard = ({ team }) => {
+    console.log(team)
     const { images, icon1, icon2 } = team;
     return (
         <div>

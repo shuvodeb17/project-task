@@ -62,7 +62,7 @@ const Team = () => {
 
             {/* Swiper */}
                 <Swiper
-                    slidesPerView={3}
+                    slidesPerView={5}
                     spaceBetween={30}
                     pagination={{
                         clickable: true,

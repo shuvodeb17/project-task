@@ -1,6 +1,7 @@
 import './App.css'
 import Counter from './components/Counter/Counter'
 import Features from './components/Features/Features'
+import Team from './components/Team/Team'
 import About from './pages/About/About'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <About />
       <Counter />
       <Features />
+      <Team />
     </>
   )
 }

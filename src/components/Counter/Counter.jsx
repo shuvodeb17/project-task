@@ -22,10 +22,10 @@ const Counter = () => {
     ]
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto md:px-0 px-5 md:mt-0 mt-5">
             <hr />
 
-            <div className="grid grid-cols-4 gap-11 py-20">
+            <div className="grid md:grid-cols-4 grid-cols-2 gap-11 py-20">
                 {
                     counters.map(counter => <SingleCounter key={counter.count} counter={counter} />)
                 }
